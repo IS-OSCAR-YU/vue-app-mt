@@ -1,0 +1,24 @@
+$navColor: #06c1ae;
+
+@mixin arrow($w: 10px, $c: #fff, $dir: right) {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border: $w solid transparent;
+    border-#{$dir}-color: $c;
+}
+
+@mixin clearfix() {
+    &::after {
+        content: '';
+        height: 0;
+        display: block;
+        clear: both;
+    }
+    
+}
+
+// px => rem
+@function rem($px, $basePxFontSize: 41.4) {
+    @return $px / $basePxFontSize * 1rem;
+}
